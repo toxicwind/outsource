@@ -556,15 +556,15 @@ The asymmetry is why that line is in the spec at all: making a suspected cause *
 <details>
 <summary><b>The contract that could not be satisfied</b> — the one place the arms genuinely split</summary>
 
-One ticket asked for two things at once: treat a file carrying `name: gadak` as ours and overwrite it, **and** keep protecting files the user authored. A user who customises our skill keeps that line — it is what makes the skill load — so the two clauses are jointly unsatisfiable.
+One ticket asked for two things at once: treat a file carrying `name: gadak` as ours and overwrite it, **and** keep protecting files the architect authored. A user who customises our skill keeps that line — it is what makes the skill load — so the two clauses are jointly unsatisfiable.
 
-- **grok** noticed and wrote it down — *"a user who customized the body but left `name: gadak` is treated as ours and overwritten"* — and implemented it as specified anyway.
+- **grok** noticed and wrote it down — *"an architect who customized the body but left `name: gadak` is treated as ours and overwritten"* — and implemented it as specified anyway.
 - **Both GLM arms** implemented it without noticing.
 - **Opus** refused, argued why, and designed around it: an install receipt with a content hash, plus a deliberately **frozen** digest table for pre-receipt installs, with a test asserting it stays frozen.
 
 Three of four arms shipped a data-loss bug **with every gate green**. That is the failure mode this skill now spends the most effort on: not a red gate, but a green one with a gap nobody named.
 
-The same shape repeated on an auth ticket whose contract asked to distinguish three failure cases the available evidence cannot distinguish. All three arms reached that conclusion; only Opus said so, classifying the one case that *is* decidable and flagging the rest as a partial miss. The GLM arms concatenated every hint into every error — satisfying the letter of "show the user a string" while quietly failing its point.
+The same shape repeated on an auth ticket whose contract asked to distinguish three failure cases the available evidence cannot distinguish. All three arms reached that conclusion; only Opus said so, classifying the one case that *is* decidable and flagging the rest as a partial miss. The GLM arms concatenated every hint into every error — satisfying the letter of "show the architect a string" while quietly failing its point.
 
 </details>
 

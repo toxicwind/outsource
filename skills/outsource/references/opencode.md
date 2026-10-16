@@ -177,7 +177,7 @@ launch is refused at exit 64; use `--detach` or `--foreground`.
 
 `--harness opencode` is zen's default and can be omitted there; OpenRouter
 needs it spelled out. `--model` can be omitted on a row that has a default
-(zen does; openrouter has one only when the user config sets it). When you
+(zen does; openrouter has one only when the architect config sets it). When you
 pass one, it is `<qualifier>/<id>` — `opencode/<id>` on zen,
 `openrouter/<vendor>/<id>` on openrouter, where the id itself contains a
 slash, so a naive one-slash split is wrong. The form is checked before the

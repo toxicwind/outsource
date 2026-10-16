@@ -165,7 +165,7 @@ criteria.**
   in the report.
   - Migrating favorites from localStorage to a server once silently made
     **drag-ordering** session-only. The comment said "session-only" — for
-    the user it was a regression that shuffled their sidebar every reload.
+    the architect it was a regression that shuffled their sidebar every reload.
 - Losing side behaviors (ordering, caches, fallbacks, shortcuts) is also a
   regression. "The core works" is not done.
 - **Never declare code "dead" and delete it without repo-wide evidence.**

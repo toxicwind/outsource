@@ -85,7 +85,7 @@ match is never accepted as a pass.
 Also measured: `ANTHROPIC_BASE_URL`/`ANTHROPIC_AUTH_TOKEN` are genuinely
 honoured by `claude -p` (an invalid token 401s, so a green run really did go
 to z.ai, not to your own subscription), `CLAUDE_CONFIG_DIR` isolates the run
-from the user's own Claude Code, and `total_cost_usd` in the log is Claude
+from the architect's own Claude Code, and `total_cost_usd` in the log is Claude
 Code's Anthropic-priced estimate — **not** what the z.ai plan charges. The
 per-round figure that is actually attributable is the token count in
 `usage`, which the launcher prints. Plan credits are not per-round: the
@@ -366,7 +366,7 @@ picks, each to a specific gap — write the spec against these:
   scripts, the spec demands naming the failure modes the chosen options
   handle (empty selection, missing binary, SIGPIPE, cron PATH).
 
-**Standalone caveat:** when the user drives the model directly (no lead, no
+**Standalone caveat:** when the architect drives the model directly (no lead, no
 hook), nothing enforces lead-only commits — that is how a red main once got
 a second unrelated push. A spec for a maybe-standalone task carries three
 lines: CI green is the definition of done, not the push; never push onto a

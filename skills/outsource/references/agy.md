@@ -89,7 +89,7 @@ Measured semantics that shaped this:
   delegate branch/worktree listings are unavailable and it should report
   rather than retry.
 
-The rules also apply to the user's own interactive `agy` sessions — that is
+The rules also apply to the architect's own interactive `agy` sessions — that is
 the cost of no isolation. To remove them: delete the `command(git …)` /
 `command(gh …)` lines from `permissions.deny` in
 `~/.gemini/antigravity-cli/settings.json`; the next delegated round
@@ -107,7 +107,7 @@ reinstalls them.
 - **Quota**: there is no readable plan quota — Google publishes relative
   tiers and a 5-hourly top-up, nothing queryable. `--require-quota` is not
   available for this provider; headroom management is by observation.
-- **Auth**: cached from the user's interactive login. A signed-out machine
+- **Auth**: cached from the architect's interactive login. A signed-out machine
   fails loudly (`authentication failed or timed out`, rc=1) — re-run `agy`
   interactively to sign in.
 

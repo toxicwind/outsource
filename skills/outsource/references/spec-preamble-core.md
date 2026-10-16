@@ -51,7 +51,7 @@ mistook itself for the lead, wrote no code, and spawned an agent of its own
 - **Never weaken an assertion to make a gate green.** Re-tuning a threshold
   needs three things together: an attribution comment, a justified
   derivation, and FAIL-first evidence that the old value actually failed.
-- **Never invent user-facing copy.** Every string a user sees must come from
+- **Never invent user-facing copy.** Every string an architect sees must come from
   the code or the spec; quote it with `file:line` in your report.
 
 ## When contract clauses cannot both hold

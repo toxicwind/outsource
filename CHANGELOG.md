@@ -739,7 +739,7 @@ Also in this release, landed between 0.15.0 and 0.16.0:
   endpoint by `-c` override**, the same shape the GLM claude-code arm uses
   against z.ai: the vendor's own harness pointed at a cheaper endpoint.
   Nothing is written to `~/.codex/config.toml`, so plain `codex` keeps its
-  OpenAI default and the user's sandbox/plugin config is untouched. Key from
+  OpenAI default and the architect's sandbox/plugin config is untouched. Key from
   `CHEAPER_INFERENCE_API_KEY`, falling back to `~/.codex/cheaperinference.key`;
   model from `CI_MODEL` (default **`gpt-5.6-sol`**), reasoning effort from
   `CI_EFFORT` (`minimal`…`xhigh`, **default `medium`** — always passed, so a
@@ -776,7 +776,7 @@ Also in this release, landed between 0.15.0 and 0.16.0:
 ## 0.13.6 — 2026-09-05 — agy default moves to gemini-3.8-flash-high
 
 - **`--provider agy` now defaults to `gemini-3.8-flash-high`.** agy 1.1.27
-  lists the 3.8 flash family and the user asked for it to be the routed
+  lists the 3.8 flash family and the architect asked for it to be the routed
   default the same day ("agy 최근 버전이 3.8로 올라왔는데 앞으로 그거 쓰도록").
   The high-only rule from 2026-08-27 carries over unchanged. Nothing about
   3.8 is measured yet: the `#1E50DC` colour probe, the white-7 shape probe
@@ -967,7 +967,7 @@ Also in this release, landed between 0.15.0 and 0.16.0:
   declared-overlay directory is user content living inside it — so the mode
   above would have shipped pointing users at a directory the next upgrade
   deleted. Preserved like `local-overlay.md`, kept out of the checksum manifest
-  (else the user's own edit reads as tampering), and pinned by
+  (else the architect's own edit reads as tampering), and pinned by
   `tests/install-preserve.test.sh`, which fails 3/6 against the old installer.
 - **`go.mod` pins `toolchain go1.26.4`.** The committed binary was built with
   go1.26.4 and `reproducible-build.test.sh` compares bytes, so any other patch
@@ -982,7 +982,7 @@ Also in this release, landed between 0.15.0 and 0.16.0:
   in this skill speaks in `<skill-dir>/bin/<tool>.sh` — so a tool without
   that name is invisible in the only vocabulary the reader has. Measured
   2026-08-26: two rounds sat finished for nine and eleven minutes in a live
-  session, and what surfaced them was the user asking, not the orchestrator.
+  session, and what surfaced them was the architect asking, not the orchestrator.
   `--detach` returns immediately and nothing afterwards wakes the caller, so
   with only `runs.sh` to poll, noticing a finished round depends on choosing
   to look — which lands wrong exactly when the lead is busy with the next
@@ -1057,7 +1057,7 @@ Also in this release, landed between 0.15.0 and 0.16.0:
   class (and the listing forms the guard allows are re-allowed after,
   last-match-wins). Measured: without the deny, `git commit
   --allow-empty -m x` created a commit; with it — including under
-  `--auto` and with the user's orca `OPENCODE_CONFIG_DIR` still in the
+  `--auto` and with the architect's orca `OPENCODE_CONFIG_DIR` still in the
   parent env — the tool call was blocked and HEAD did not move.
 - **`--auto --pure`** on the child. `--auto` is what lets a `read` of
   a path outside cwd through (`external_directory` defaults to ask;

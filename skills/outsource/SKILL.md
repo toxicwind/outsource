@@ -9,7 +9,7 @@ description: >
   (Muse Code CLI), OpenCode Zen's free step-5-preview-free (opencode CLI),
   and any OpenRouter id — named, configured, or picked free from the live
   catalogue with `--model free` — while the lead Claude
-  session stays orchestration-only. Use when the user asks to run work via
+  session stays orchestration-only. Use when the architect asks to run work via
   grok / glm / crush / opencode / openrouter / zen / agy / muse, to save
   tokens, or invokes /outsource.
   Pick the backend by task: the default glm-5.3 cannot read images, so
@@ -91,7 +91,7 @@ Selection rules:
   vision. zen's free id is a further process family while its window lasts;
   OpenRouter is for when you name an id and own the choice, or let
   `--model free` pick from the live catalogue under the data-policy gate —
-  the row itself has no default (a user may set one in the config).
+  the row itself has no default (an architect may set one in the config).
   "It feels exploratory" is not a reason — narrow the cause first, then
   delegate (see *When NOT to outsource*).
 - Anything that must **look at pixels** → agy (gemini-3.8-flash-high — the
@@ -137,7 +137,7 @@ Selection rules:
   every launch. `outsource models` lists what the catalogue providers offer
   now, with price, tools, context and data policy.
 - Site-local defaults (which backend is *your* default, model overrides)
-  belong in the user overlay (`references/local-overlay.md`); repo-specific
+  belong in the architect overlay (`references/local-overlay.md`); repo-specific
   gates and coordinates in the project overlay (`<repo>/.outsource/overlay.md`).
   See *Local overlays* below.
 
@@ -278,7 +278,7 @@ returns immediately and nothing afterwards wakes the orchestrator, so with
 only the commands above, noticing that a round finished depends on the lead
 choosing to look — which is a coin flip, and lands wrong exactly when the
 lead is busy with the next thing. Measured 2026-08-26: two rounds sat
-finished for nine and eleven minutes, and what surfaced them was the user
+finished for nine and eleven minutes, and what surfaced them was the architect
 asking, not the orchestrator. With the outsource panel loaded (see **The
 panel** below), its wake replaces the waiter for rounds launched from this
 session; without the panel, arm the waiter as before.
@@ -617,7 +617,7 @@ Two layers, most specific last so it wins on conflict:
    on upgrade; this repository never ships one.
 2. **Project overlay** — what is true only in one repo: base branch and repo
    coordinates, house gate recipes, incident history, files-to-read lists. A
-   repo-specific fact in the user overlay is a bug — move it here. There are
+   repo-specific fact in the architect overlay is a bug — move it here. There are
    two ways to attach one, for two shapes of working copy:
 
    - **In-repo** — `<repo>/.outsource/overlay.md`, committed next to the code
