@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# outsource — self-test gate (PASS/FAIL).
+# Go project (module github.com/midagedev/outsource, go 1.24). Gate = `go build
+# ./...` + `go vet ./cmd/...` (fast, no network). This is a vendored fork
+# (midagedev); the gate is local.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+echo "== outsource check: start =="
+export RUN_FAST_ACTIVE=0   # keep the estate bash-2s-shim from wrapping `go` (else unbound-var error)
+GO="${GO:-go}"
+command -v "$GO" >/dev/null 2>&1 || { echo "FAIL: go not found"; exit 1; }
+
+echo "-- go build ./... --"
+set +e
+bout="$("$GO" build ./... 2>&1)"
+brc=$?
+set -e
+echo "$bout"
+[ "$brc" -eq 0 ] || { echo "FAIL: go build rc=$brc"; exit 1; }
+
+echo "-- go vet ./cmd/... --"
+set +e
+vout="$("$GO" vet ./cmd/... 2>&1)"
+vrc=$?
+set -e
+echo "$vout"
+[ "$vrc" -eq 0 ] || { echo "FAIL: go vet rc=$vrc"; exit 1; }
+
+echo "== outsource check: PASS =="
+exit 0

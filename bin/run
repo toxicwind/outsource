@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# outsource — primary operation: the Termux/Ahead-deploy outsource Go CLI.
+# Entry: cmd/outsource/main.go (console binary `outsource`).
+#
+# Usage:
+#   bin/run [args...]   # pass through to the outsource CLI (default: --help)
+#   bin/run check       # fast build+vet gate
+set -euo pipefail
+cd "$(dirname "$0")/.."
+GO="${GO:-go}"
+
+if [ "${1:-}" = "check" ]; then
+  exec ./bin/check
+fi
+[ -d cmd/outsource ] || { echo "FAIL: cmd/outsource missing"; exit 1; }
+
+if [ "$#" -eq 0 ]; then
+  exec "$GO" run ./cmd/outsource --help
+fi
+exec "$GO" run ./cmd/outsource "$@"
